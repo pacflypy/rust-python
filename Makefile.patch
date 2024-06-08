@@ -1,0 +1,19 @@
+--- Makefile	2024-06-08 16:56:34.700923451 +0200
++++ patch/Makefile	2024-06-08 17:02:18.916119116 +0200
+@@ -1,6 +1,6 @@
+ cdir=$(shell pwd)
+ url="https://github.com/RustPython/RustPython"
+-prefix=$(cdir)/usr/local
++prefix=$(cdir)/data/data/com.termux/files/usr
+ name="RustPython"
+ version="0.3.1"
+ arch=$(shell dpkg --print-architecture)
+@@ -36,7 +36,7 @@
+ 	echo 'Section: utils' >> control
+ 	echo 'Priority: optional' >> control
+ 	echo 'Architecture: $(arch)' >> control
+-	echo 'Depends: build-essential, make, libssl-dev' >> control
++	echo 'Depends: build-essential, make, openssl' >> control
+ 	echo 'Maintainer: Kevin Alexander Krefting <kakrefting@gmail.com>' >> control
+ 	echo 'Description: A Python Interpreter written in Rust' >> control
+ 	echo '' >> control

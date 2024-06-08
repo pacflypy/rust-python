@@ -40,6 +40,9 @@ generate:
 	echo 'Maintainer: Kevin Alexander Krefting <kakrefting@gmail.com>' >> control
 	echo 'Description: A Python Interpreter written in Rust' >> control
 	echo '' >> control
+	echo '#!/bin/bash' > postinst
+	echo 'rustpython -m ensurepip' >> postinst
+	chmod 755 postinst
 
 
 all:
