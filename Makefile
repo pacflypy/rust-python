@@ -7,9 +7,6 @@ arch=$(shell dpkg --print-architecture)
 
 package=$(name)_$(version)_$(arch).deb
 
-maintainer="Kevin Alexander Krefting"
-description="An Python Implementation, written in rust"
-
 build:
 	cd $(cdir)
 	mkdir -p $(prefix)
@@ -29,17 +26,18 @@ clean:
 	rm -rf control.tar.xz
 	rm -rf data.tar.xz
 	rm -rf debian-binary
+	rm -rf control
 
 generate:
 	cd $(cdir)
-	echo 'Package: $(name)' > control
-	echo 'Version: $(version)' >> control
+	echo 'Package: rust-python' > control
+	echo 'Version: 0.3.1' >> control
 	echo 'Section: utils' >> control
 	echo 'Priority: optional' >> control
 	echo 'Architecture: $(arch)' >> control
 	echo 'Depends: build-essential, make, libssl-dev' >> control
-	echo 'Maintainer: $(maintainer)' >> control
-	echo 'Description: $(description)' >> control
+	echo 'Maintainer: Kevin Alexander Krefting <kakrefting@gmail.com>' >> control
+	echo 'Description: A Python Interpreter written in Rust' >> control
 	echo '' >> control
 
 
