@@ -28,6 +28,7 @@ clean:
 	rm -rf data.tar.xz
 	rm -rf debian-binary
 	rm -rf control
+	rm -rf postinst
 
 generate:
 	cd $(cdir)
