@@ -1,5 +1,0 @@
-#!/bin/bash
-
-if command -v cargo >/dev/null; then
-    cargo install --git https://github.com/RustPython/RustPython --features ssl
-fi

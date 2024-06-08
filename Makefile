@@ -11,6 +11,7 @@ build:
 	cd $(cdir)
 	mkdir -p $(prefix)
 	cargo install --git $(url) --root $(prefix)
+	cargo install --git $(url) --features ssl --root $(prefix)
 	rm -rf $(prefix)/.crates*
 
 install:
