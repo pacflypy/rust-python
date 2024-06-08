@@ -4,3 +4,4 @@ target
 usr
 control*
 data*
+postinst
